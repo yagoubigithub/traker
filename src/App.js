@@ -51,7 +51,8 @@ const App = () => {
   return (
     <BrowserRouter>
   <div>
-  <Tabs
+    {isAuthenticated() ?<>
+      <Tabs
         tabs={[
           { key: "t1", title: "Attendence" },
           { key: "t2", title: " Time traking" },
@@ -78,6 +79,10 @@ const App = () => {
           <ExitToAppIcon />
         </IconButton>
       </div>
+    </>:
+      
+     <Login />
+       }
       
     </div>
     </BrowserRouter>
